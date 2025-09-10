@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метеор</title>
+    <link rel="icon" href="favicon.png" type="png">
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <div class="avatar-container">
+                    <div class="avatar" id="avatar">
+                        <img src="foto.jpg" alt="Фото">
+                    </div>
+                </div>
+                <input type="file" id="fileInput" class="file-input" accept="image/*">
+                <h1>Sergei Pikulik</h1>
+                <p class="tagline">QA-Padawan / Лучший сотрудник 4 квартала 2022 года TDC</p>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="about">
+                <h2><i class="fas fa-user"></i> Обо мне</h2>
+                <div class="about-text" id="aboutText">
+                    Привет. Меня зовут Сергей. 
+                    Я занимаюсь обучением в QA Studio Германа Дольникова. 
+                    Теперь у меня есть практический опыт работы с HTML и CSS. В свободное время я гуляю, слушаю музыку, нравится synthwave жанр. 
+                    Кстати, этот сайт визитку я изучаю с музыкой на фоне и один из треков ты можешь прослушать.
+                    <br><br>
+                    Всегда открыт для новых проектов и сотрудничества.
+                </div>
+            </div>
+            
+            <div class="social">
+                <h2><i class="fas fa-share-alt"></i> Мои социальные сети</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vontotpasan" target="_blank" class="social-link" >
+                        <i class="fab fa-instagram instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://vk.com/callme_thedude" target="_blank" class="social-link">
+                        <i class="fab fa-vk vk"></i>
+                        <span>ВКонтакте</span>
+                    </a>
+                    <a href="https://coub.com/serega.pikulik" target="_blank" class="social-link">
+                        <i class="fas fa-video coub"></i>
+                        <span>Coub</span>
+                    </a>
+                    <a href="https://t.me/LuisCobb" target="_blank" class="social-link">
+                        <i class="fab fa-telegram telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="music-player">
+            <h3><i class="fas fa-music"></i> The world is yours.</h3>
+            <div class="music-controls">
+                <button class="music-btn" onclick="playMusic()">
+                    <i class="fas fa-play"></i> ☊ play
+                </button>
+                <button class="music-btn" onclick="pauseMusic()">
+                    <i class="fas fa-pause"></i> ‖ pause
+                </button>
+                <button class="music-btn" onclick="stopMusic()">
+                    <i class="fas fa-stop"></i> ◾stop
+                </button>
+            </div>
+            <div class="music-info">
+                [Scarface main theme - Piano Cover]
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025. Все права были бы защищены, если бы...</p>
+        </footer>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <!-- Замените путь на свой аудиофайл -->
+        <source src="twiy.m4a" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+
+    <script>
+        // Функции для музыки
+        const audio = document.getElementById('bgMusic');
+        
+        function playMusic() {
+            audio.play().catch(error => {
+                console.log("Автовоспроизведение заблокировано: ", error);
+                alert("Нажмите 'Включить' еще раз для воспроизведения музыки");
+            });
+        }
+
+        function pauseMusic() {
+            audio.pause();
+        }
+
+        function stopMusic() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+
+        // Редактирование текста о себе
+        const aboutText = document.getElementById('aboutText');
+        aboutText.addEventListener('click', function() {
+            const newText = prompt('Расскажите о себе:', aboutText.textContent);
+            if (newText !== null) {
+                aboutText.textContent = newText;
+            }
+        });
+    </script>
+</body>
+</html>
