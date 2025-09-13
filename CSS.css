@@ -1,7 +1,15 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: local('DeathStar') format('truetype'),
-         local('Roadrage') format('opentype');
+    src: url('https://github.com/LuisCobb/LuisCobb.github.io/blob/main/Roadrage.otf.otf') format('opentype'),
+         url('https://github.com/LuisCobb/LuisCobb.github.io/blob/main/DeathStar.ttf.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Для плавной загрузки */
+}
+
+/* Использование шрифта */
+body {
+    font-family: 'MyCustomFont', sans-serif;
 }
 
 * {
@@ -92,12 +100,26 @@
         }
         
         h1 {
-            font-family: MyCustomFont ;
+            font-family: MyCustomFont, DeathStar.ttf.ttf;
             font-size: 4.5rem;
             margin-bottom: 10px;
             background: linear-gradient(169deg, #ffffff, #e0c53e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+    /* Дополнительные улучшения */
+    display: inline-block; /* Для корректного отображения градиента */
+    padding: 10px; /* Отступы вокруг текста */
+    text-transform: uppercase; /* Текст заглавными буквами */
+    letter-spacing: 2px; /* Расстояние между буквами */
+    animation: gradient-animation 5s linear infinite; /* Анимация градиента */
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
         }
         
         .tagline {
@@ -230,3 +252,4 @@
         }
 
     </style>
+
