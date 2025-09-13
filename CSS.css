@@ -9,7 +9,7 @@
 
 /* Использование шрифта */
 body {
-    font-family: 'MyCustomFont', sans-serif;
+    font-family: 'MyCustomFont', DeathStar.ttf;
 }
 
 * {
@@ -252,4 +252,5 @@ body {
         }
 
     </style>
+
 
