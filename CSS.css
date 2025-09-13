@@ -1,20 +1,15 @@
-<style>
-        * {
-            @font-face {
-        font-family: 'MyCustomFont';
-        src: local('fonts/DeathStar.ttf') format('ttf'), local('fonts/Roadrage.otf') format('otf');}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: local('DeathStar') format('truetype'),
+         local('Roadrage') format('opentype');
+}
 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI','MyCustomFont'
-    Tahoma,
-    DeathStar.ttf,
-    Roadrage.otf,
-    Geneva,
-    Verdana,
-    sans-serif;}
-        
+    font-family: 'Segoe UI', 'MyCustomFont', Tahoma, Geneva, Verdana, sans-serif;
+}       
         body {
             background: linear-gradient(300deg, #8a0057, #009999, #006400);
             color: #fff;
@@ -233,4 +228,5 @@
         .file-input {
             display: none;
         }
+
     </style>
